@@ -1,0 +1,166 @@
+
+CyberNova Linux Security Audit Report
+==================================================
+
+Author: Ibrahim Mukhtar Saidu
+
+Version: 3.1
+
+Scan Time:
+2026-04-13 23:17:54.693557
+
+
+
+System Information
+------------------------------
+Operating System: Linux
+OS Release: 7.0.9+parrot7-amd64
+Kernel Version: #1 SMP PREEMPT_DYNAMIC Parrot 7.0.9-1parrot1 (2026-05-28)
+Hostname: parrot
+Current User: ibrahimwaliyyee
+
+
+
+Local User Accounts
+------------------------------
+- root
+- daemon
+- bin
+- sys
+- sync
+- games
+- man
+- lp
+- mail
+- news
+- uucp
+- proxy
+- www-data
+- backup
+- list
+- irc
+- _apt
+- nobody
+- systemd-network
+- dhcpcd
+- tss
+- systemd-coredump
+- uuidd
+- debian-tor
+- messagebus
+- dnsmasq
+- avahi
+- usbmux
+- _flatpak
+- cups-pk-helper
+- sddm
+- saned
+- polkitd
+- rtkit
+- colord
+- ibrahimwaliyyee
+- Debian-exim
+- vnstat
+
+
+Running Services
+------------------------------
+- accounts-daemon.service
+  System service
+- bluetooth.service
+  Wireless communication service
+- containerd.service
+  System service
+- cpupower-gui-helper.service
+  System service
+- cron.service
+  System service
+- dbus.service
+  System service
+- docker.service
+  Container management service
+- haveged.service
+  System service
+- ModemManager.service
+  System service
+- NetworkManager.service
+  System service
+- polkit.service
+  System service
+- power-profiles-daemon.service
+  System service
+- rngd.service
+  System service
+- rtkit-daemon.service
+  System service
+- sddm.service
+  System service
+- smartmontools.service
+  System service
+- switcheroo-control.service
+  System service
+- systemd-journald.service
+  System service
+- systemd-logind.service
+  System service
+- systemd-udevd.service
+  System service
+- udisks2.service
+  System service
+- upower.service
+  System service
+- user@1000.service
+  System service
+- vnstat.service
+  System service
+- wpa_supplicant.service
+  System service
+
+
+Open Listening Ports
+------------------------------
+- 5353: mDNS Network Discovery
+- 39448: Unknown service
+- 45039: Unknown service
+
+
+World Writable Files
+------------------------------
+[WARNING] /tmp/.ICE-unix/1440
+[WARNING] /tmp/.X11-unix/X0
+
+
+SUID Files
+------------------------------
+[INFO] /usr/bin/chfn
+[INFO] /usr/bin/chsh
+[INFO] /usr/bin/fusermount3
+[INFO] /usr/bin/gpasswd
+[INFO] /usr/bin/mount
+[INFO] /usr/bin/newgrp
+[INFO] /usr/bin/ntfs-3g
+[INFO] /usr/bin/passwd
+[INFO] /usr/bin/pkexec
+[INFO] /usr/bin/su
+[INFO] /usr/bin/sudo
+[INFO] /usr/bin/umount
+[INFO] /usr/bin/vmware-user-suid-wrapper
+
+
+Security Analysis
+------------------------------
+[WARNING] World writable files detected
+Risk: Files writable by all users can be modified.
+
+[INFO] SUID binaries detected
+Review privileged executables.
+
+
+
+Security Score
+------------------------------
+85/100
+
+
+Risk Level:
+LOW RISK
