@@ -1,30 +1,43 @@
-# CyberNova Linux Security Audit Toolkit
+# 🛡️ CyberNova Linux Security Audit Toolkit
 
-A beginner-friendly Linux security auditing tool built with Python.
+A Python-based Linux security auditing toolkit designed to analyze system security posture, identify common security risks, and generate automated audit reports.
 
-This project performs basic security checks on a Linux system, including system information gathering, service enumeration, port analysis, permission auditing, and security risk scoring.
+Built for cybersecurity learning, Linux administration practice, and authorized security assessments.
 
-## Features
+---
+
+## 🚀 Features
 
 - System information collection
 - Local user account enumeration
-- Running service detection
+- Running service analysis
 - Listening port detection
 - World writable file detection
-- SUID file auditing
+- SUID binary auditing
 - Security risk analysis
 - Security score calculation
 - Automated audit report generation
 
-## Technologies Used
+---
+
+## 🖥️ Screenshot
+
+![CyberNova Security Audit Result](screenshots/version-3.1-security-audit.png)
+
+---
+
+## 🛠️ Technologies Used
 
 - Python 3
 - Linux
 - System Administration
 - Security Auditing
-- Bash/Linux Commands
+- Linux Command Line
+- Security Analysis
 
-## Installation
+---
+
+## 📦 Installation
 
 Clone the repository:
 
