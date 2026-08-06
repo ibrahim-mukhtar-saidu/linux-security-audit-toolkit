@@ -1,0 +1,23 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env
+
+# Testing cache
+.pytest_cache/
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Log files
+*.log
