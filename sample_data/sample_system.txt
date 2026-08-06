@@ -1,0 +1,26 @@
+CyberNova Linux Security Audit Sample Data
+
+Operating System:
+Parrot Security OS
+
+Kernel:
+Linux 7.x
+
+Users:
+root
+ibrahim
+
+Listening Ports:
+22 SSH
+80 HTTP
+
+Security Checks:
+
+World Writable Files:
+2 detected
+
+SUID Files:
+3 detected
+
+Audit Purpose:
+Security assessment training
