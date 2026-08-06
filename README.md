@@ -136,19 +136,19 @@ linux-security-audit-toolkit/
 ├── .gitignore
 
 ├── docs/
-│ └── architecture.md
+│   └── architecture.md
 
 ├── tests/
-│ └── test_security_audit.py
+│   └── test_security_audit.py
 
 ├── sample_data/
-│ └── sample_system.txt
+│   └── sample_system.txt
 
 ├── reports/
-│ └── security_audit_report.txt
+│   └── security_audit_report.txt
 
 └── screenshots/
-└── version-3.1-security-audit.png
+    └── version-3.1-security-audit.png
 
 
 ---
