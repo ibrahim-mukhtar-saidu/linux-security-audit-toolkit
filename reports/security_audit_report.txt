@@ -7,15 +7,15 @@ Author: Ibrahim Mukhtar Saidu
 Version: 3.1
 
 Scan Time:
-2026-08-05 14:32:51.184322
+2026-08-09 22:29:11.138481
 
 
 
 System Information
 ------------------------------
 Operating System: Linux
-OS Release: 7.0.9+parrot7-amd64
-Kernel Version: #1 SMP PREEMPT_DYNAMIC Parrot 7.0.9-1parrot1 (2026-05-28)
+OS Release: 7.0.13+parrot7-amd64
+Kernel Version: #1 SMP PREEMPT_DYNAMIC Parrot 7.0.13-1parrot1 (2026-07-12)
 Hostname: parrot
 Current User: ibrahimwaliyyee
 
@@ -61,6 +61,7 @@ Local User Accounts
 - ibrahimwaliyyee
 - Debian-exim
 - vnstat
+- tcpdump
 
 
 Running Services
@@ -120,14 +121,12 @@ Running Services
 Open Listening Ports
 ------------------------------
 - 5353: mDNS Network Discovery
-- 39448: Unknown service
-- 45039: Unknown service
+- 44783: Unknown service
 
 
 World Writable Files
 ------------------------------
-[WARNING] /tmp/.ICE-unix/1440
-[WARNING] /tmp/.X11-unix/X0
+[OK] No world writable files found
 
 
 SUID Files
@@ -138,28 +137,28 @@ SUID Files
 [INFO] /usr/bin/gpasswd
 [INFO] /usr/bin/mount
 [INFO] /usr/bin/newgrp
-[INFO] /usr/bin/ntfs-3g
 [INFO] /usr/bin/passwd
 [INFO] /usr/bin/pkexec
 [INFO] /usr/bin/su
 [INFO] /usr/bin/sudo
 [INFO] /usr/bin/umount
 [INFO] /usr/bin/vmware-user-suid-wrapper
+[INFO] /usr/bin/ntfs-3g
 
 
 Security Analysis
 ------------------------------
-[WARNING] World writable files detected
-Risk: Files writable by all users can be modified.
+[INFO] Listening network services detected
+Review whether each exposed service is required.
 
 [INFO] SUID binaries detected
-Review privileged executables.
+Review privileged executables and verify they are required.
 
 
 
 Security Score
 ------------------------------
-85/100
+100/100
 
 
 Risk Level:

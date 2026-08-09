@@ -104,85 +104,64 @@ def get_services():
 
     return services
 def get_ports():
-
     ports = []
 
     try:
-
         result = subprocess.check_output(
-            "ss -tulnp",
-            shell=True,
+            ["ss", "-tuln"],
             text=True
         )
 
-
         for line in result.splitlines():
+            parts = line.split()
 
-            if ":" in line:
+            if len(parts) < 5:
+                continue
 
-                try:
+            local_address = parts[4]
 
-                    address = line.split()[4]
+            try:
+                port = local_address.rsplit(":", 1)[-1]
 
-                    port = address.split(":")[-1]
+                if port.isdigit():
+                    ports.append(int(port))
 
+            except (ValueError, IndexError):
+                continue
 
-                    if port.isdigit():
-
-                        ports.append(int(port))
-
-
-                except:
-
-                    pass
-
-
-    except:
-
+    except (subprocess.CalledProcessError, FileNotFoundError):
         pass
 
-
-    return sorted(list(set(ports)))
+    return sorted(set(ports))
 
 
 
 
 def check_world_writable():
-
     findings = []
 
-
     for directory in ["/tmp", "/var/tmp"]:
-
         try:
-
             for root, dirs, files in os.walk(directory):
-
                 for file in files:
-
                     path = os.path.join(root, file)
 
-
                     try:
+                        stat_info = os.stat(path)
 
-                        permissions = os.stat(path).st_mode
+                        # Check regular files only.
+                        if not os.path.isfile(path):
+                            continue
 
-
-                        if permissions & 0o002:
-
+                        # Check files writable by everyone.
+                        if stat_info.st_mode & 0o002:
                             findings.append(path)
 
+                    except (PermissionError, FileNotFoundError, OSError):
+                        continue
 
-                    except:
-
-                        pass
-
-
-        except:
-
-            pass
-
-
+        except (PermissionError, FileNotFoundError, OSError):
+            continue
 
     return findings[:10]
 
@@ -219,44 +198,41 @@ def check_suid_files():
 
 
 def analyze_security(world_files, suid_files, ports):
-
     score = 100
-
     findings = []
 
-
+    # World-writable regular files
     if world_files:
-
-        score -= 15
+        score -= 20
 
         findings.append(
-            "[WARNING] World writable files detected\n"
-            "Risk: Files writable by all users can be modified."
+            "[WARNING] World-writable regular files detected\n"
+            "Risk: Files writable by all users may be modified by unauthorized users."
         )
 
-
+    # Listening ports
     if len(ports) > 5:
-
         score -= 10
 
         findings.append(
-            "[INFO] Multiple listening ports detected\n"
-            "Review unnecessary network services."
+            "[WARNING] Multiple listening ports detected\n"
+            "Risk: Additional network services increase the system's attack surface."
         )
 
+    elif ports:
+        findings.append(
+            "[INFO] Listening network services detected\n"
+            "Review whether each exposed service is required."
+        )
 
+    # SUID binaries
     if suid_files:
-
         findings.append(
             "[INFO] SUID binaries detected\n"
-            "Review privileged executables."
+            "Review privileged executables and verify they are required."
         )
 
-
-    if score < 0:
-
-        score = 0
-
+    score = max(0, min(100, score))
 
     return score, findings
 
