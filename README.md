@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Linux-orange.svg)](#requirements)
 [![Tests](https://img.shields.io/badge/Tests-110%20passed-brightgreen.svg)](#testing)
 [![Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)](#testing)
-[![Security](https://img.shields.io/badge/Bandit-0%20findings-brightgreen.svg)](#security-validation)
+[![Security](https://img.shields.io/badge/Bandit-0%20production%20findings-brightgreen.svg)](#security-validation)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Part of the **CYBERNOVA AI Cybersecurity Portfolio** by **Ibrahim Mukhtar Saidu**.
@@ -260,7 +260,7 @@ linux-security-audit-toolkit/
 ├── reports/
 │   └── security_audit_report.txt
 ├── screenshots/
-│   └── version-3.1-security-audit.png
+│   └── version-3.2-security-audit.png
 └── tests/
     └── test_security_audit.py
 ```
@@ -765,7 +765,7 @@ See [LICENSE](LICENSE) for details.
 99% code coverage               PASS
 Ruff                            PASS
 Ruff formatting                 PASS
-Bandit                          0 findings
+Bandit (production code)        0 findings
 MyPy                            0 issues
 pip-audit                       0 vulnerabilities
 Python compilation              PASS
