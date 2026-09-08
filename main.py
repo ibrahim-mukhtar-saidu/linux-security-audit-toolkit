@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+
 import security_audit
 
 
@@ -12,13 +13,11 @@ def main():
     parser.add_argument(
         "--version",
         action="version",
-        version=f"CyberNova Linux Security Audit Toolkit v{security_audit.VERSION}"
+        version=f"CyberNova Linux Security Audit Toolkit v{security_audit.VERSION}",
     )
 
     parser.add_argument(
-        "--audit",
-        action="store_true",
-        help="Run a complete Linux security audit"
+        "--audit", action="store_true", help="Run a complete Linux security audit"
     )
 
     args = parser.parse_args()
